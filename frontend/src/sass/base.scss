@@ -1,0 +1,213 @@
+@use "fonts.scss" as *;
+@use "stylelib/core" as *;
+
+$MIN_WIDTH: 1300px;
+$MAX_WIDTH: 1800px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Bicyclette";
+  background-color: #09090b
+}
+
+h1 {
+  @include header-font-family();
+  @include linear-font-size-clamp($MIN_WIDTH, $MAX_WIDTH, 18pt, 30pt);
+
+  color: white;
+}
+
+h2 {
+  color: #fff;
+  text-align: center;
+  @include header-font-family();
+  text-transform: uppercase;
+}
+
+h3 {
+  @include header-font-family();
+  color: #d1d5db;
+}
+
+span {
+  color: rgba(255, 255, 255, 0.60);
+  font-size: 16px;
+  font-style: normal !important;
+  font-weight: 400;
+  line-height: 24px;
+  /* 150% */
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Override global span styles inside Monaco editor so code looks correct */
+.monaco-editor,
+.monaco-editor * {
+  font-family: Menlo, Monaco, "Courier New", monospace !important;
+  font-size: 12px !important;
+  line-height: 1.5 !important;
+  // color: #e5e7eb !important; /* tailwind zinc-200 */
+}
+
+.btn {
+  border-radius: 12px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 24px;
+  padding-right: 24px;
+  cursor: pointer;
+  text-align: center;
+  @include header-font-family();
+  font-size: 15.75px;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  border: none;
+
+  &:active {
+    box-shadow: none;
+    transform: translateY(5px);
+  }
+
+  &:disabled {
+    box-shadow: none;
+    background: #a1a1a1;
+    cursor: not-allowed;
+
+    &:active {
+      transform: none;
+    }
+  }
+}
+
+.tiny-btn {
+  border-radius: 5px;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  cursor: pointer;
+  text-align: center;
+  @include paragraph-font-family();
+  font-size: 10pt;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  border: none;
+
+  &:active {
+    box-shadow: none;
+    transform: translateY(5px);
+  }
+
+  &:disabled {
+    box-shadow: none;
+    background: #a1a1a1;
+    cursor: not-allowed;
+
+    &:active {
+      transform: none;
+    }
+  }
+}
+
+ol {
+  margin-left: 1rem;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.btn-full {
+  display: block;
+  width: 100%;
+}
+
+.rainbow-btn {
+  @extend .btn;
+  background: linear-gradient(90deg,
+      #fe4056 0%,
+      #ec7694 48.56%,
+      rgba(47, 92, 252, 0.34) 100%);
+  box-shadow: 0px 5px 0px 0px #0c173f;
+  color: #fff;
+}
+
+.white-btn {
+  @extend .btn;
+  background-color: #fff;
+  box-shadow: 0px 5px 0px 0px #0c173f;
+  border: 1px solid #5865f2;
+  color: #5865f2;
+}
+
+.white-black-btn {
+  @extend .btn;
+  background: #fff;
+  box-shadow: 0px 5px 0px 0px #525252;
+  color: black;
+}
+
+.black-btn {
+  @extend .btn;
+  border-radius: 12px;
+  border: 1px solid #fff;
+  background: linear-gradient(0deg,
+      rgba(0, 0, 0, 0.33) 0%,
+      rgba(0, 0, 0, 0.33) 100%);
+  box-shadow: 0px 5px 0px 0px #525252;
+  color: #fff;
+}
+
+.tiny-black-btn {
+  @extend .tiny-btn;
+  border-radius: 12px;
+  border: 1px solid #fff;
+  background: linear-gradient(0deg,
+      rgba(0, 0, 0, 0.33) 0%,
+      rgba(0, 0, 0, 0.33) 100%);
+  box-shadow: 0px 5px 0px 0px #525252;
+  color: #fff;
+}
+
+.tiny-green-btn {
+  @extend .tiny-btn;
+  border: 1px solid #fff;
+  background: linear-gradient(115deg, #fff720, #3cd500);
+  box-shadow: 0px 5px 0px 0px #525252;
+  color: black;
+}
+
+.tiny-rainbow-btn {
+  @extend .tiny-btn;
+  background: linear-gradient(90deg,
+      #fe4056 0%,
+      #ec7694 48.56%,
+      rgba(47, 92, 252, 0.34) 100%);
+  box-shadow: 0px 5px 0px 0px #0c173f;
+  color: #fff;
+}
+
+.tiny-red-btn {
+  @extend .tiny-btn;
+  background-color: #fe4056;
+  box-shadow: 0px 5px 0px 0px #0c173f;
+  color: #fff;
+}
+
+.monaco-editor,
+.monaco-editor * {
+  color: rgba(255, 255, 255, 0.80);
+  font-size: 12px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  /* 162.5% */
+}

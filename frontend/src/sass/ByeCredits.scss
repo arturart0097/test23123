@@ -1,0 +1,65 @@
+@use "font-awesome/fontawesome.scss" as *;
+@use "font-awesome/solid.scss" as *;
+@use "fonts.scss" as *;
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Unbounded:wght@200..900&display=swap");
+
+.credit-wrapper {
+  display: flex;
+  width: 384px;
+  padding: 76.254px 0 76.776px 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  border: 2px solid #0b0e1c;
+  background: rgba(12, 13, 18, 0.3);
+  backdrop-filter: blur(20px);
+
+  h2 {
+    color: #fff;
+    text-align: center;
+    font-family: Unbounded;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 48px;
+  }
+
+  p {
+    color: #fff;
+    text-align: center;
+    font-family: Outfit;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 32px;
+  }
+
+  button {
+    display: flex;
+    width: 226px;
+    padding: 20px 60px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    border-radius: 70px;
+    background: #fff;
+    color: #000;
+    cursor: pointer;
+    color: var(--900, #1a1b1f);
+    text-align: center;
+    font-family: Unbounded;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 90%; /* 21.6px */
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: auto;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+    text-transform: uppercase;
+  }
+}

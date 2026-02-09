@@ -1,0 +1,351 @@
+@use "stylelib/core" as *;
+@use "base.scss" as *;
+
+img {
+  display: block;
+}
+
+.game-preview {
+  min-height: 800px;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+.progress-bars {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+
+  .bolt-icon {
+    max-width: 33px;
+  }
+
+  .progress-bar-wrap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .progress-bar-description {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      font-family: "Tachyon W00 Light";
+      font-size: 10px;
+    }
+  }
+}
+
+.builder-badge-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  .badges {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+  }
+}
+
+.achievement-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  .progress-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.builder-badge {
+  display: flex;
+  width: 93.06px;
+  height: 93.06px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  opacity: 0.5;
+
+  &.blue {
+    background: linear-gradient(135deg,
+        rgba(15, 87, 194, 0.6) 0%,
+        rgba(20, 114, 255, 0.6) 100%);
+  }
+
+  &.green {
+    background: linear-gradient(135deg,
+        rgba(30, 128, 110, 0.6) 0%,
+        rgba(42, 183, 159, 0.6) 100%);
+  }
+
+  &.orange {
+    background: linear-gradient(135deg,
+        rgba(180, 83, 9, 0.6) 0%,
+        rgba(245, 158, 11, 0.6) 100%);
+  }
+
+  &.purple {
+    background: linear-gradient(135deg,
+        rgba(109, 78, 188, 0.6) 0%,
+        rgba(144, 102, 250, 0.6) 100%);
+  }
+
+  &.pink {
+    background: linear-gradient(135deg,
+        rgba(190, 24, 93, 0.6) 0%,
+        rgba(236, 72, 153, 0.6) 100%);
+  }
+}
+
+hr {
+  color: #1f2937;
+}
+
+select {
+  border-radius: 8px;
+  border: 3px solid rgba(47, 92, 252, 0.23);
+  background: #09090b;
+  box-shadow: 0px 5px 0px 0px rgba(0, 18, 82, 0.23);
+  font-size: 14pt;
+  padding: 0.5rem;
+  color: white;
+  font-family: "Bicyclette";
+  width: max-content;
+}
+
+.integration-checklist-item {
+  border-radius: 14px;
+  border: 0.599px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  &+.integration-checklist-item {
+    margin-top: 0.75rem;
+  }
+
+  .title-bar {
+    display: flex;
+    flex-direction: row;
+    gap: 0.9rem;
+    align-items: center;
+
+    .icon {
+      $size: 42px;
+
+      width: $size;
+      height: $size;
+      flex-shrink: 0;
+    }
+
+    .body {
+      flex-grow: 1;
+
+      .title {
+        font-family: "Bicyclette";
+        font-size: 16px;
+        font-weight: 600;
+        color: #f9fafb;
+      }
+
+      .subtitle {
+        margin-top: 2px;
+        font-family: "Bicyclette";
+        font-size: 13px;
+        color: rgba(209, 213, 219, 0.85);
+      }
+    }
+
+    .verified-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      font-family: "Bicyclette";
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: linear-gradient(60deg, #F094FA 13.4%, #F5576E 86.6%);
+      color: #ffffff;
+      border: 1px solid rgba(250, 250, 250, 0.25);
+      box-shadow:
+        0 0 0 1px rgba(250, 250, 250, 0.12),
+        0 0 18px rgba(240, 148, 250, 0.5);
+      white-space: nowrap;
+    }
+  }
+
+  // Custom inputs (checkboxes + radios) inside integration cards
+  input[type="checkbox"],
+  input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    border: 1.797px solid rgba(255, 255, 255, 0.30);
+    background-color: transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition:
+      border-color 0.15s ease-out,
+      background-color 0.15s ease-out,
+      box-shadow 0.15s ease-out;
+  }
+
+  // Radios should still be circular
+  input[type="radio"] {
+    border-radius: 999px;
+  }
+
+  input[type="checkbox"]::after,
+  input[type="radio"]::after {
+    content: "";
+    display: block;
+    opacity: 0;
+    transition: opacity 0.15s ease-out, transform 0.15s ease-out;
+  }
+
+  input[type="checkbox"]::after {
+    width: 70%;
+    height: 70%;
+    border-radius: 3px;
+    background: linear-gradient(60deg, #F094FA 13.4%, #F5576E 86.6%);
+  }
+
+  input[type="radio"]::after {
+    width: 60%;
+    height: 60%;
+    border-radius: 999px;
+    background: #F094FA;
+  }
+
+  input[type="checkbox"]:checked,
+  input[type="radio"]:checked {
+    border-color: #F094FA;
+    box-shadow: 0 0 0 1px rgba(240, 148, 250, 0.35);
+  }
+
+  input[type="checkbox"]:checked::after,
+  input[type="radio"]:checked::after {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.section {
+  border-radius: 16px;
+  border: 1px solid rgba(5, 125, 255, 0.20);
+  background: linear-gradient(135deg, #1A1B1F 0%, #0F1014 100%);
+  padding: 1.4rem 1.6rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+
+  &+.section {
+    margin-top: 1.25rem;
+  }
+
+  .warning-message {
+    margin-top: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    border: 1px solid rgba(248, 113, 113, 0.5);
+    background: rgba(127, 29, 29, 0.25);
+    color: #fecaca;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .title-row {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+
+    .title {
+      flex-grow: 1;
+      flex-basis: 100%;
+    }
+
+    .caret-icon-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  .title {
+    @include linear-font-size-clamp($MIN_WIDTH, $MAX_WIDTH, 14pt, 18pt);
+    flex-grow: 1;
+  }
+
+  .content {
+    font-family: "Bicyclette";
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: row;
+  // gap: 1rem;s
+  background-color: #09090b;
+  // min-height: 100vh;
+  color: white;
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    // padding: 1rem;
+    .dashboard-card {
+      flex-basis: 100%;
+      padding: 2rem;
+      border-radius: 16px;
+      border: 1px solid #1f2937;
+      background: rgba(9, 9, 11, 0.5);
+      box-shadow:
+        0px 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0px 2px 4px -2px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(2px);
+
+      // width: max-content;
+    }
+
+    .card-row {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    .main {
+      // Fallback spacing for header height
+      padding-top: 64px;
+      // Add iOS safe-area inset if available
+      padding-top: calc(64px + env(safe-area-inset-top));
+    }
+  }
+}

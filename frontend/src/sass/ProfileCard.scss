@@ -1,0 +1,83 @@
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  .profile-user {
+    font-family: "Tachyon W00 Regular";
+
+    display: flex;
+    gap: 1rem;
+
+    .profile-card-icon {
+      border-radius: 20px;
+    }
+
+    .profile-tags {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5rem;
+    }
+  }
+
+  .profile-card-icon {
+    max-width: 40px;
+  }
+
+  .status-cards {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+
+.status-card {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  border-radius: 12px;
+  flex-basis: 100%;
+  &.red {
+    border: 1px solid #be185d;
+    background: rgba(190, 24, 93, 0.17);
+  }
+
+  &.blue {
+    border: 1px solid #1472ff;
+    background: rgba(20, 114, 255, 0.26);
+  }
+  padding: 1rem;
+  .icon {
+    width: 47px;
+  }
+
+  .body {
+    font-family: "Tachyon W00 Regular";
+  }
+}
+
+.tag {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  .tag-circle {
+    width: 10px;
+    height: 10px;
+
+    &.gray {
+      background-color: #a1a1aa;
+      border-radius: 5px;
+    }
+  }
+  color: #a1a1aa;
+  text-align: center;
+  font-family: "Tachyon W00 Light";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px; /* 133.333% */
+  border-radius: 9999px;
+  border: 1px solid #27272a;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
